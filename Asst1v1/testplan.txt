@@ -1,0 +1,11 @@
+﻿Dov Kassai and Nathaniel Arussy
+CS 214 Systems Programming Asst1
+                                        CUSTOM TEST CASES
+
+
+CUSTOM CASE 1
+The first extra test case we had was just a simple test case that was a catch prevention. We included this to make sure we are able to catch all the cases that are supposed to not work. This case was supposed to throw and error when we tried to malloc and when we tried to free. The way that we implemented this was that we chose an arbitrary number, 65, to malloc. Then we tried to input the number 4092 to malloc. The 4092 should fit since it is smaller than the size of the array, which is 4096. Since we already malloc’d 65 there would not be enough room, which is when the error is thrown that there is not enough space. The reason that there is no free for errorcase is that there is nothing to free at that point. This is because it was never inputted into the array since it is to large. Another error that happens in this case is when we try to free. This is supposed to throw the error since we are trying to free something that is not able to be freed, since it was already freed. This is where it prints out line and file where we are trying to free something that is already free’d. 
+
+
+CUSTOM CASE 2
+        This case is another stress test case. It is going to malloc 2 items into the array and then free the one that is 2 behind the index you are currently at. The way this is working is that we first initialize the first element of the index to some random number between 1 and 5, so we do not have an issue when we try free for the first time, since if nothing was there and we tried freeing we would run into an error. Then we malloc a random number between 1 and 5  into the next iteration of the array and free whatever is in the element 2 behind the iteration. This is supposed to be checking to make sure there is no fragmentation when mallocing and freeing in alternative indexes in the array.
