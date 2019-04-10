@@ -1,0 +1,17 @@
+Recursive tests:
+  We ran fileCompressor on a single file to generate its HuffmanCodebook file, then split the file into several files and scattered them through a directory. Running fileCompressor on the directory gave the same HuffmanCodebook file, so it works recursively.
+
+Building the codebook:
+  Without Recursion:
+   We took a regular test file and ran the codebook program on it. After we got the codebook with the now encoded words, we checked it against an outside source to  ensure that the algorithm was correct in the way that it was encoded.
+  
+  With Recursion:
+  We took a directory that was filled with both files and other directories and ran the codebook program on them. After we got the codebook, we checked to see if the encoded words were correct from an outside source.
+  
+ 
+Compression:
+  To test if compression was functional, we tested files against a codebook. We tried to compress a file with a word that was not in the codebook; if it was not in the codebook then it would have an error. We also tested the compression by adding new lines and tabs throughout the file to check and make sure that the new lines and tabs were compressed with the file. An additional case we tested was if there were bits that were not connected to a leaf node.  If so, this case would give us an error.
+  
+  
+Decompression:
+  To test if decompression worked, we took a file and ran the compression program on it and built a codebook. We then made up another file of the encoded bits that represented a string of the words that were in the codebook. Following that step, we ran the decompression to see if the output of the decompression was the same as the input we did for the compression. As they were the same, we know that the decompression was successful.
