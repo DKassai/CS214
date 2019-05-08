@@ -1,0 +1,78 @@
+Asst3 - WTF
+Vijay Challa (VKC17), Dov Kassai (DK778)
+
+These are the inputs and expected results for each test case outlined in testcases.txt. The full set of test cases can be executed with the command "./WTFTest".
+
+1.	 Input: Create Test
+	Output: Failure, no .configure file
+	
+2.	 Input: Configure localhost 5555
+	Output: A .configure file written to the Client's directory
+	
+3.	 Input: Create Test
+	Output: A new folder in the Server's directory called Test containing a file
+			called Test.manifest. The Client's directory will also contain the same
+			file.
+	
+4.	 Input: Create Test
+	Output: Failure, the Project already exists in the Server's directory
+	
+5.	 Input: Add Test a.txt, Add Test b.txt, Add c.txt
+	Output: Additional entries in the Client's Test.manifest file for each .txt file
+	
+6.	 Input: Add Test a.txt
+	Output: Failure, the file is already being tracked in this Project
+	
+7.	 Input: Push Test
+	Output: Failure, there isn't a Test.commit file
+	
+8.	 Input: Commit Test
+	Output: Both the Client and Server directories will contain the same Test.commit file
+			which contains entries for Test.manifest, a.txt, and b.txt
+	
+9.	 Input: Push Test
+	Output: The Server will output all new files to the Test/ directory, update the 
+			Test.manifest file, and maintain an archive of push
+	
+10.	 Input: Commit Test
+	Output: Failure, the Client doesn't have any new or modified files in its .manifest
+	
+11.	 Input: Commit Test
+	Output: Both the Client and Server directories will contain the same Test.commit file
+			which only has entries for Test.manifest and a.txt
+	
+12.	 Input: Push Test
+	Output: The Server will output the modified a.txt to the Test/ directory, update the
+			Test.manifest file, and maintain an archive of the push
+	
+13.	 Input: Upgrade Test
+	Output: Failure, there isn't a Test.update file
+	
+14.	 Input: Update Test
+	Output: Failure, there aren't any removed files
+	
+15.	 Input: Remove Test a.txt, Remove Test b.txt
+	Output: The Client's Test.manifest file will not contain the entry for a.txt
+	
+16.	 Input: Remove Test a.txt
+	Output: Failure, a.txt is no longer being tracked by the Client
+	
+17.	 Input: Update Test
+	Output: The Client will write a Test.update file to its directory, containing entries
+			for each file that was removed
+	
+18.	 Input: Upgrade Project
+	Output: The Server will send an archive of all the files in the Client's Test.update
+			file, then the Client will extract those to its directory, and delete the 
+			archive
+	
+19.	 Input: Update Test
+	Output: Failure, the Client will detect a Version Conflict between the files it's
+			tracking and those on the server, and output those files to the user.
+	
+20.	 Input: Destroy Test
+	Output: The Client will delete its Test.manifest file, and the Server will delete
+			the Test/ directory and all files contained in it.
+	
+21.	 Input: Destroy Test
+	Output: Failure, the Project no longer exists on the Server

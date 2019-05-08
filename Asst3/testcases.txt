@@ -1,0 +1,26 @@
+Asst3 - WTF
+Vijay Challa (VKC17), Dov Kassai (DK778)
+
+Before running the test cases make sure that there is are two terminals running. One for the server and one for the client. The server should be run with port 9000 before starting WTFTest.
+
+1. Attempting to Create a Project without Configuring the Client
+2. Calling Configure to write a .configure file
+3. Creating a new Project
+4. Attempting to create a Project with the same name as one that already exists
+5. Adding three files to the Project
+6. Attempting to add a file that is already in the Project
+7. Attempting to Push without a .commit file
+8. Commiting the Project
+9. Pushing a Commit with new Project files
+10. Attempting to Commit without any file differences
+11. Modifying a file, then commiting
+12. Pushing a Commit with a modified Project file
+13. Attempting to Upgrade the Project without a .update file
+14. Attempting to Update the Project without any removed Project files
+15. Removing a Project file
+16. Attempting to Remove a file that is not being tracked
+17. Removing Project files, then Update the Project
+18. Upgrading the Project
+19. Modifing a Project file and attempting to Update
+20. Destroying the Project
+21. Attempting to Destroy the Project when it doesn't exist
